@@ -62,7 +62,6 @@ gevent==24.10.1
 geventhttpclient==2.3.1
 gpx-converter==2.1.0
 gpxpy==1.6.2
-graphfm @ git+https://github.com/graphfm/graphfm.git@66b137639ebff26de3648dbe4971bc693a5ff8c8
 greenlet==3.1.1
 greenstalk==2.0.2
 h11==0.14.0
@@ -102,7 +101,6 @@ mdurl==0.1.2
 mixpanel==4.10.1
 more-itertools==10.5.0
 multidict==6.0.4
-mux-python @ git+https://github.com/muxinc/mux-python.git@ede40da70cdd2ba7730185dc8e7aa8fbfc1c11e8
 nest-asyncio==1.5.6
 networkx==3.3
 nh3==0.2.18
