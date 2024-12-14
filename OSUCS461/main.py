@@ -7,7 +7,7 @@ from time import time
 import traceback
 import uvicorn
 
-from OSUCS461.Utilities.CustomLogger import custom_logger
+from Utilities.CustomLogger import custom_logger
 from OSUCS461.Config import FASTAPI_CONFIG
 from OSUCS461.Routers import router
 
