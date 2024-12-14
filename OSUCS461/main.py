@@ -8,8 +8,8 @@ import traceback
 import uvicorn
 
 from Utilities.CustomLogger import custom_logger
-from OSUCS461.Config import FASTAPI_CONFIG
-from OSUCS461.Routers import router
+from Config import FASTAPI_CONFIG
+from Routers import router
 
 logger = custom_logger('fastAPI', 'fastapi_logs.log')
 

@@ -5,7 +5,7 @@ from copy import deepcopy
 from .mysql_core import mysql_core
 from .mysql_functions import mysql_functions
 
-from OSUCS461.Utilities import (
+from Utilities import (
 	createHash,
 	isNumber,
 	isUnicode,

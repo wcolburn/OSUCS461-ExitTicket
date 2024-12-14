@@ -4,10 +4,10 @@ _scriptname = "Routers"
 
 from fastapi import APIRouter
 from starlette.responses import RedirectResponse
-from OSUCS461.Routers.v1 import router as v1
-from OSUCS461.Classes.Database import DB
-from OSUCS461.Classes.User import UserClass
-from OSUCS461.Models import User, UserPost
+from Routers.v1 import router as v1
+from Classes.Database import DB
+from Classes.User import UserClass
+from Models import User, UserPost
 from datetime import datetime
 
 # Resource used for code below: https://www.youtube.com/watch?v=ID9b4diFZN8
