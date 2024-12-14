@@ -1,0 +1,6 @@
+fastapi==0.115.6
+geventhttpclient==2.0.12
+mariadb==1.1.11
+pydantic==2.10.3
+starlette==0.41.3
+uvicorn==0.32.1
