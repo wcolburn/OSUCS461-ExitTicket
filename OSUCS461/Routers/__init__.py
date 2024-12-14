@@ -33,19 +33,13 @@ async def redirect_to_ap():
 
 @router.get("/users")
 async def get_users() -> list[User]:
-	print("Hey!")
-	tables = DB.GetTables()
-	print(tables, flush=True)
 	return [
-		User(**u) for u in users_list
+		User(**u) for u in user_class.get_users()
 	]
 
 @router.get("/users/{uuid}")
 async def user_by_uuid(uuid: int) -> User:
-	user = next((User(**u) for u in users_list if u['uuid'] == uuid), None)
-	if user is None:
-		raise HTTPException(status_code=404, detail="Invalid User ID")
-	return user
+	return user_class.get_user(uuid)
 
 @router.post("/users")
 async def create_user(user_data: UserPost) -> User:

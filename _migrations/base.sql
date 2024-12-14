@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS user;
 CREATE TABLE `user` (
   `uuid` varchar(56) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `time_created` int(11) DEFAULT NULL,
-  `last_seen` int(11) DEFAULT NULL,
+  `time_created` DATETIME(6) DEFAULT NULL,
+  `last_seen` DATETIME(6) DEFAULT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
