@@ -4,7 +4,7 @@ from geventhttpclient import HTTPClient, URL
 from json import loads, JSONEncoder
 from codecs import getencoder
 from decimal import Decimal
-from Helpers import convert, _encodeutf8, get_status_response
+from .Helpers import convert, _encodeutf8, get_status_response
 
 import html.entities as entity
 from html import unescape
