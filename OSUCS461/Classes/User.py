@@ -33,3 +33,7 @@ class UserClass:
         DB.Update(user_table, new_params, field_params=params)
         user = DB.GetBy(user_table, params)
         return user
+
+    def delete_user(self, user_id):
+        params = {"uuid":user_id}
+        return DB.DeleteWhere(user_table, params)

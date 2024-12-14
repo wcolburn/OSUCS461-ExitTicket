@@ -41,3 +41,7 @@ async def create_user(user_data: UserWrite) -> User:
 @router.put("/users/{uuid}")
 async def update_user(uuid: int, user_data: UserWrite) -> User:
 	return user_class.update_user(uuid, user_data)
+
+@router.delete("/users/{uuid}")
+async def delete_user(uuid: int):
+	return user_class.delete_user(uuid)
