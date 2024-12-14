@@ -1,7 +1,7 @@
 import os
 import time
 import logging
-from OSUCS461.Config import env
+from Config import env
 from logging.handlers import RotatingFileHandler
 
 loki_on = False

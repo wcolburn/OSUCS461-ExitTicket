@@ -1,4 +1,4 @@
-from OSUCS461.Utilities import bisectSearchRC
+from Utilities import bisectSearchRC
 
 class PositiveNumbers:
 	Code = None
