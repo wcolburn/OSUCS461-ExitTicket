@@ -13,3 +13,12 @@ class User(UserWrite):
 	uuid: int
 	time_created: datetime
 	last_seen: datetime
+
+class UserPostWrite(BaseModel):
+	post_9char: str
+	text: str
+	user_uuid: int
+
+class UserPost(UserPostWrite):
+	uuid: int
+	time_created: datetime

@@ -7,7 +7,8 @@ from starlette.responses import RedirectResponse
 from Routers.v1 import router as v1
 from Classes.Database import DB
 from Classes.User import UserClass
-from Models import User, UserWrite
+from Classes.Post import PostClass
+from Models import User, UserWrite, UserPost, UserPostWrite
 from datetime import datetime
 
 # Resource used for code below: https://www.youtube.com/watch?v=ID9b4diFZN8
@@ -19,11 +20,14 @@ tables = DB.GetTables()
 user_table = tables[0]
 
 user_class = UserClass()
+post_class = PostClass()
 
 @router.get("/")
 async def redirect_to_ap():
 	return RedirectResponse(url="https://oregonstate.edu")
 
+
+# Users
 @router.get("/users")
 async def get_users() -> list[User]:
 	return [
@@ -45,3 +49,13 @@ async def update_user(uuid: int, user_data: UserWrite) -> User:
 @router.delete("/users/{uuid}")
 async def delete_user(uuid: int):
 	return user_class.delete_user(uuid)
+
+# Users' Posts
+@router.get("/posts")
+async def get_posts() -> list[UserPost]:
+	return [
+		UserPost(**p) for p in post_class.get_posts()
+	]
+@router.post("/posts")
+async def create_post(user_data: UserPostWrite) -> UserPost:
+	return post_class.add_to_db(user_data)
