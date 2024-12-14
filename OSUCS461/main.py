@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.routing import APIRoute
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
+from starlette.responses import Response
 from time import time
 import traceback
 import uvicorn
@@ -28,6 +29,8 @@ class LoggingMiddleware(BaseHTTPMiddleware):
 				break
 		logger.info(f"Handling function: {route_name}")
 		start_time = time()
+
+		response = Response("Internal server error", status_code=500)
 		try:
 			response = await call_next(request)
 		except Exception as e:

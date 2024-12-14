@@ -1,7 +1,8 @@
 _scriptname = 'ThirdParty.MySQL.mysql_core'
 
 import os
-import mariadb
+import mysql.connector
+from mysql.connector import pooling
 from copy import deepcopy
 import traceback
 from functools import wraps
@@ -49,10 +50,9 @@ class mysql_core:
 			"db": db,
 		}
 
-		self.pool = mariadb.ConnectionPool(
+		self.pool = pooling.MySQLConnectionPool(
 			pool_name=pool_name,
 			pool_size=pool_size,
-			pool_validation_interval=250,
 			**self.creds
 		)
 
@@ -166,9 +166,11 @@ class mysql_core:
 		if type(val) is not str:
 			return val
 
-		with self.pool.get_connection() as con:
-			escaped = con.escape_string(val)
-			return escaped
+		# with self.pool.get_connection() as con:
+		# 	escaped = con.escape_string(val)
+		# 	return escaped
+		escaped = mysql.connector.conversion.MySQLConverter().escape(val)
+		return escaped
 
 	def unescape_strings(self, val):
 		if isinstance(val, dict):

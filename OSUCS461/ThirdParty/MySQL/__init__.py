@@ -672,6 +672,7 @@ class MySQL(mysql_core):
 		elif type(val) is int or type(val) is float:
 			return str(val)
 		else:
+			val = str(val)
 			val = val.replace("?", "&#63")
 			return f"'{self.escape_string(val)}'"
 
