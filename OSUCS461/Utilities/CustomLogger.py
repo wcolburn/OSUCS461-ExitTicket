@@ -1,13 +1,12 @@
 import os
 import time
 import logging
-# from Config import env
+from Config import env
 from logging.handlers import RotatingFileHandler
 
 loki_on = False
 
 app_name = "HP-API"
-env = "prod"
 
 def custom_logger(name, log_file, level=logging.DEBUG):
 	current_dir = os.path.abspath(os.path.dirname(__file__))

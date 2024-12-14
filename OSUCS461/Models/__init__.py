@@ -6,10 +6,10 @@ class BasePydanticModel(BaseModel):
 		from_attributes = False
 		validate_assignment = True
 
-class UserPost(BaseModel):
-	uuid: int
+class UserWrite(BaseModel):
 	email: str
 
-class User(UserPost):
+class User(UserWrite):
+	uuid: int
 	time_created: datetime
 	last_seen: datetime
